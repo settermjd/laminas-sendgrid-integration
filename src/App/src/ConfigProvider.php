@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Laminas\SendGrid;
 
 use Laminas\SendGrid\Factory\SendGridFactory;
+use SendGrid;
 
 class ConfigProvider
 {
@@ -25,7 +26,7 @@ class ConfigProvider
     {
         return [
             'factories' => [
-                \SendGrid::class => SendGridFactory::class,
+                SendGrid::class => SendGridFactory::class,
             ],
         ];
     }

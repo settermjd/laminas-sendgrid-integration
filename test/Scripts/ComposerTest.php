@@ -10,11 +10,11 @@ use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamDirectory;
 use PHPUnit\Framework\TestCase;
 
+use function file_exists;
+
 class ComposerTest extends TestCase
 {
-    /**
-     * @var array|\array[][]
-     */
+    /** @var array|array[][] */
     private array $structure;
     private vfsStreamDirectory $root;
 
@@ -29,14 +29,14 @@ class ComposerTest extends TestCase
                     'laminas-sendgrid-integration' => [
                         'config' => [
                             'autoload' => [
-                                'sendgrid.global.php' => 'some file content'
+                                'sendgrid.global.php' => 'some file content',
                             ],
                         ],
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ];
-        $this->root = vfsStream::setup('root', null, $this->structure);
+        $this->root      = vfsStream::setup('root', null, $this->structure);
 
         Composer::postPackageInstall(
             $this->createMock(PackageEvent::class),
