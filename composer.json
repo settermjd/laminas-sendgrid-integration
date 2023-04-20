@@ -2,7 +2,7 @@
     "name": "settermjd/laminas-sendgrid-integration",
     "description": "A small package to simplify integrating SendGrid into a Laminas or Mezzio project",
     "type": "library",
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "autoload": {
         "psr-4": {
             "Laminas\\SendGrid\\": "src/App/src/"
@@ -49,5 +49,14 @@
         "static-analysis": "psalm --shepherd --stats",
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+    },
+    "support": {
+        "docs": "https://github.com/settermjd/laminas-sendgrid-integration/docs",
+        "issues": "https://github.com/settermjd/laminas-sendgrid-integration/issues"
+    },
+    "extra": {
+        "laminas": {
+            "config-provider": "Laminas\\SendGrid\\ConfigProvider"
+        }
     }
 }
