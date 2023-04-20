@@ -22,7 +22,9 @@
     "require": {
         "php": "^8.2.0",
         "psr/container": "2.0.2",
-        "sendgrid/sendgrid": "8.0.1"
+        "sendgrid/sendgrid": "8.0.1",
+        "composer/composer": "^2.5",
+        "symfony/filesystem": "^6.2"
     },
     "require-dev": {
         "laminas/laminas-coding-standard": "^2.5",
@@ -30,7 +32,8 @@
         "vimeo/psalm": "^5.9",
         "psalm/plugin-phpunit": "^0.18.4",
         "phpunit/phpunit": "^10.1",
-        "fakerphp/faker": "^1.21"
+        "fakerphp/faker": "^1.21",
+        "mikey179/vfsstream": "^1.6"
     },
     "config": {
         "allow-plugins": {
@@ -38,7 +41,8 @@
         }
     },
     "scripts": {
-        "post-create-project-cmd": [
+        "post-package-install": [
+            "Laminas\\SendGrid\\Scripts\\Composer::postPackageInstall"
         ],
         "check": [
             "@cs-check",
