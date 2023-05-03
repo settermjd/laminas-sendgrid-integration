@@ -10,20 +10,8 @@ Install this package using Composer:
 composer require settermjd/laminas-sendgrid-integration
 ```
 
-During installation, the default configuration file, _config/autoload/sendgrid.global.php_, will be copied to _config/autoload_, if used within a Mezzio project.
-Otherwise, you will need to copy the default configuration file to the applicable directory in your project.
-
 ## Configuration
 
-In the configuration file, replace `<<SENDGRID_API_KEY>>` with your [SendGrid API key](https://docs.sendgrid.com/ui/account-and-settings/api-keys).
-I recommend using an [environment variable](https://www.twilio.com/blog/working-with-environment-variables-in-php), as in the following example, perhaps set using [PHP Dotenv](https://github.com/vlucas/phpdotenv).
-
-```php
-<?php
-
-return [
-    'sendgrid' => [
-        'api_key' => $_SERVER['SENDGRID_API_KEY']
-    ]
-];
-```
+If you're using the package with Mezzio, copy the default configuration file, _config/autoload/sendgrid.global.php_, to _config/autoload_ in your project.
+Then, either ensure that the `SENDGRID_API_KEY` environment variable is set, or change the value of `api_key` in _config/autoload/sendgrid.global.php_ as appropriate.
+I recommend using [PHP Dotenv](https://github.com/vlucas/phpdotenv) to set environment variables during development and your deployment tool otherwise.
