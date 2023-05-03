@@ -42,7 +42,10 @@
     },
     "scripts": {
         "post-package-install": [
-            "Laminas\\SendGrid\\Scripts\\Composer::postPackageInstall"
+            "Laminas\\SendGrid\\Scripts\\Composer::onPostPackageInstall"
+        ],
+        "post-package-uninstall": [
+            "Laminas\\SendGrid\\Scripts\\Composer::onPostPackageUninstall"
         ],
         "check": [
             "@cs-check",

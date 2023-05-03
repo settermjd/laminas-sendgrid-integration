@@ -38,7 +38,7 @@ class ComposerTest extends TestCase
         ];
         $this->root      = vfsStream::setup('root', null, $this->structure);
 
-        Composer::postPackageInstall(
+        Composer::onPostPackageInstall(
             $this->createMock(PackageEvent::class),
             vfsStream::url('root/'),
         );
