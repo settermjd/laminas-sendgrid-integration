@@ -1,7 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'sendgrid' => [
-        'api_key' => '<<SENDGRID_API_KEY>>'
-    ]
+        'api_key' => $_SERVER['SENDGRID_API_KEY'],
+    ],
 ];
